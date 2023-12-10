@@ -49,7 +49,8 @@ class BooksController < ApplicationController
   else
     render :edit
   end
-end
+  
+ end
 
   def destroy
 
