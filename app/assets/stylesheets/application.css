@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*top.html*/
+.top_box {
+  margin: 50px;
+}
+
+.top_body {
+  margin-top: 40px;
+}
+
+.top_body span {
+  font-weight: bold;
+}
+
+/*show.html*/
+.show_box {
+  margin: 50px;
+}
+.show_text {
+ display: flex;
+ margin-left: 45px;
+}
+
+.show_area {
+  margin-bottom: 30px;
+}
+
+/*index.html*/
+
+.index_box {
+  margin: 30px;
+}
+
+.box {
+  padding: 0 5px;
+}
+
+.errors_msg {
+  width: 500px;
+  margin: 15px 0;
+}
+
+.info_msg {
+  padding-left: 20px;
+  background-color: red;
+  color: white;
+}
+
+.info_box{
+  height: 130px;
+  background-color:  whitesmoke;
+  padding-top: 30px;
+  border: 4px solid;
+  border-color: red;
+}
+
+.info_msg_s {
+  text-align: center;
+  list-style-position: inside;
+  padding-right: 150px;
+}
+
+.error {
+  border: 2px solid;
+  border-color: red;
+}
+
+.warning {
+  background-color: red;
+}
+
+/*edit.html*/
+.edit_box {
+  margin: 40px;
+}
+
+/*サクセスコード*/
+.success {
+  margin: 50px 0 0 50px;
+  color : blue;
+}

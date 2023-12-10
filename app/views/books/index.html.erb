@@ -1,0 +1,102 @@
+<div class="index_box">
+
+  <h2>Books</h2>
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>title</th>
+
+        <th>body</th>
+
+      </tr>
+
+    </thead>
+
+
+    <% @books.each do |book| %>
+
+      <tbody>
+
+        <tr>
+
+          <td><%= book.title %></td>
+
+          <td><%= book.body %></td>
+
+          <td class="box"><%= link_to "show",book_path(book.id) %></td>
+
+          <td class="box"><%= link_to "edit",edit_book_path(book.id) %></td>
+
+          <td class="box"><%= link_to "Destroy",book_path(book.id),method: :delete, "data-confirm" => "本当に削除しますか？"  %></td>
+
+        </tr>
+
+      </tbody>
+
+    <% end %>
+
+  </table>
+
+
+
+  <h2>New book</h2>
+
+  <div class="errors_msg">
+
+    <% if @book.errors.any? %>
+
+      <p class="info_msg"><%= @book.errors.count %> error prohibited this book from being saved:</p>
+
+      <ul class="info_box">
+
+        <% @book.errors.full_messages.each do |message| %>
+
+          <li class="info_msg_s"><%= message %></li>
+
+        <% end %>
+
+      </ul>
+
+    <% end %>
+
+  </div>
+
+  <%= form_with model: @book,url: '/books',method: :post do |f|%>
+
+    <% if @book.errors.include?(:title) %>
+
+     <span class="warning">Title</span>
+
+    <%= f.text_field :title, class: 'title_input error' %>
+
+  <% else %>
+
+    <p>Title</p>
+
+    <%= f.text_field :title, class: 'title_input' %>
+
+  <% end %>
+
+  <% if @book.errors.include?(:body) %>
+    <!--spanタグのみだとインライン要素でtitleボックスと並んでしまうためdivタグ追加-->
+    <div><span class="warning">Body</span></div>
+
+    <%= f.text_area :body, class: 'body_input error' %>
+
+  <% else %>
+
+    <p>Body</p>
+
+    <%= f.text_area :body, class: 'body_input' %>
+
+  <% end %>
+
+  <div><%= f.submit 'create Book'%></div>
+
+  <% end %>
+
+</div>

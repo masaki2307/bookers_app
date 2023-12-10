@@ -1,0 +1,29 @@
+<div class="show_box">
+
+  <div class="show_text">
+
+    <h4>Title:</h4>
+
+    <p class="show_area"><%= @book.title %></p>
+
+  </div>
+
+  <div class="show_text">
+
+    <h4>Body:</h4>
+
+    <p class="show_area"><%= @book.body %></p>
+
+  </div>
+
+  <div>
+
+      <span><%= link_to "Edit", edit_book_path(@book.id) %></span>
+
+      <span>|</span>
+
+      <span><%= link_to "Back", books_path(@book.id) %></span>
+
+  </div>
+
+</div>
